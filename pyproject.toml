@@ -11,7 +11,13 @@ keywords = ["biology", "genomics", "statistics", "phylogeny", "evolution", "bioi
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.13"
-dependencies = ["click", "rich", "cogent3-h5seqs>=0.6.0"]
+dependencies = [
+    "click",
+    "rich",
+    "cogent3-h5seqs>=0.6.1",
+    "pympler>=1.1",
+    "bcbio-gff>=0.7.1",
+]
 classifiers = [
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Science/Research",
@@ -53,4 +59,11 @@ where = ["src"]
 [tool.setuptool.sdist]
 include = ["doc/", "requirements.txt", "src/*", "pyproject.toml"]
 exclude = ["doc/*.html"]
+
+[dependency-groups]
+dev = [
+    "biopython>=1.85",
+    "psrecord>=1.4",
+    "scikit-bio>=0.7.0",
+]
 
